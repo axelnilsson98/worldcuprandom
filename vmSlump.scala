@@ -2,14 +2,13 @@ object vmSlump:
     
     def calc(matches: Int): Unit =
         val rand = scala.util.Random()
-
-        val results = for i <- 0 until matches yield
+                
+        println("results:")
+        for i <- 0 until matches do
+            if(i%5 == 0) then println()
             var home = rand.nextInt(128)
             var away = rand.nextInt(128)
-            (convert(home), convert(away))
-        
-        println("results:")
-        results.map(i  => println(s"${i._1}\t-\t${i._2}"))
+            println(s"${convert(home)}\t-\t${convert(away)}")
 
         println("tiebreakers")
         for(i <- 0 until 10 )do
